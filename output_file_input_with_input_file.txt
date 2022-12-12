@@ -1,0 +1,44 @@
+Client with id 0 is trying to settle
+Client with id 0 has settled in room number 0
+Client with id 1 is trying to settle
+Client with id 1 has settled in room number 1
+Client with id 1 has stayed long enough
+Client with id 1 has left room number 1
+Client with id 0 has stayed long enough
+Client with id 0 has left room number 0
+Client with id 2 is trying to settle
+Client with id 2 has settled in room number 0
+Client with id 3 is trying to settle
+Client with id 3 has settled in room number 1
+Client with id 4 is trying to settle
+Client with id 4 has settled in room number 2
+Client with id 5 is trying to settle
+Client with id 5 has settled in room number 3
+Client with id 6 is trying to settle
+Client with id 6 has settled in room number 4
+Client with id 2 has stayed long enough
+Client with id 3 has stayed long enough
+Client with id 3 has left room number 1
+Client with id 2 has left room number 0
+Client with id 4 has stayed long enough
+Client with id 4 has left room number 2
+Client with id 7 is trying to settle
+Client with id 7 has settled in room number 0
+Client with id 7 has stayed long enough
+Client with id 7 has left room number 0
+Client with id 5 has stayed long enough
+Client with id 5 has left room number 3
+Client with id 8 is trying to settle
+Client with id 8 has settled in room number 0
+Client with id 6 has stayed long enough
+Client with id 6 has left room number 4
+Client with id 8 has stayed long enough
+Client with id 8 has left room number 0
+Client with id 9 is trying to settle
+Client with id 9 has settled in room number 0
+Client with id 9 has stayed long enough
+Client with id 9 has left room number 0
+Client with id 10 is trying to settle
+Client with id 10 has settled in room number 0
+Client with id 10 has stayed long enough
+Client with id 10 has left room number 0
