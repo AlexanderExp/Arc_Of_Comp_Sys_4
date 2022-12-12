@@ -1,0 +1,21 @@
+Random input or through command line (1 - cmd, 2 - random):1
+Enter the number of clients :10
+Enter the time of stay for Client with id 0: 1
+
+Enter the time of stay for Client with id 1: 2
+
+Enter the time of stay for Client with id 2: 2
+
+Enter the time of stay for Client with id 3: 1
+
+Enter the time of stay for Client with id 4: 2
+
+Enter the time of stay for Client with id 5: 1
+
+Enter the time of stay for Client with id 6: 2
+
+Enter the time of stay for Client with id 7: 1
+
+Enter the time of stay for Client with id 8: 0
+
+Enter the time of stay for Client with id 9: 0
