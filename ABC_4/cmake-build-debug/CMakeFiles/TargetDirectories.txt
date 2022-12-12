@@ -1,0 +1,3 @@
+/Users/admin/Учеба/CLionProjects/ABC_4/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/admin/Учеба/CLionProjects/ABC_4/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/admin/Учеба/CLionProjects/ABC_4/cmake-build-debug/CMakeFiles/ABC_4.dir
