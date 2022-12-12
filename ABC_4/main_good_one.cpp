@@ -1,7 +1,3 @@
-#pragma clang diagnostic push
-#pragma ide diagnostic ignored "cert-msc50-cpp"
-#pragma ide diagnostic ignored "cert-err58-cpp"
-
 #include <fstream>
 #include <iostream>
 #include <pthread.h>
