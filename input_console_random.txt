@@ -1,0 +1,2 @@
+Random input or through command line (1 - cmd, 2 - random):2
+Enter seed f:8
