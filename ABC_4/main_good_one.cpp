@@ -1,3 +1,7 @@
+#pragma clang diagnostic push
+#pragma ide diagnostic ignored "cert-msc50-cpp"
+#pragma ide diagnostic ignored "cert-err58-cpp"
+
 #include <fstream>
 #include <iostream>
 #include <pthread.h>
@@ -53,7 +57,7 @@ public:
     bool isReadyToLeave() {
         return has_stayed_for_his_time_;
     }
-    void fixNumberOfRoom (int num) {
+    void fixNumberOfRoom(int num) {
         number_of_room_ = num;
     }
     int getNumberOfRoom() {
@@ -144,6 +148,7 @@ int main(int argc, char *argv[]) {
     for (int i = 0; i < NUMBER_OF_ROOMS_IN_HOTEL; ++i) {
         rooms[i] = true;
     }
+    int answer = 0;
 
     // Опции ввода/вывода данных
     // Возможные варианты
@@ -162,8 +167,7 @@ int main(int argc, char *argv[]) {
     // Входные данные будут взяты из файла с указанным <Input FIle Name>
     // Вывод будет осуществляться в файл с указанным <Output File Name>
     if (argc == 1) {
-        printf("Random input or through command line (1 - cmd, 2 - random):");
-        int answer = 0;
+        printf("Random input or through command line (1 - cmd; 2 - random):");
         scanf("%d", &answer);
 
         // Рандомная генерация либо ввод/вывод полностью через консоль
@@ -182,11 +186,10 @@ int main(int argc, char *argv[]) {
                 std::cout << "Enter the time of stay for Client with id " + std::to_string(i) + ": ";
                 std::cin >> stay_time;
                 std::cout << "\n";
-                Client new_client = Client(i, stay_time);
-                clients[i] = new_client;
+                clients.emplace_back(i, stay_time);
             }
             printf("\n");
-        } else {
+        } else if (answer == 2) {
             int seed;
             printf("Enter seed f:");
             scanf("%d", &seed);
@@ -199,8 +202,7 @@ int main(int argc, char *argv[]) {
             int stay_time;
             for (int i = 0; i < number_of_clients; ++i) {
                 stay_time = rand() % MAX_DAYS_RENT;
-                Client *new_client = new Client(i, stay_time);
-                clients[i] = *new_client;
+                clients.emplace_back(i, stay_time);
             }
 
             printf("Guests will stay for ... days (first number corresponding to first guest, etc.):\n");
@@ -220,28 +222,20 @@ int main(int argc, char *argv[]) {
             int stay_time;
             for (int i = 0; i < number_of_clients; ++i) {
                 stay_time = rand() % MAX_DAYS_RENT;
-                Client *new_client = new Client(i, stay_time);
-                clients[i] = *new_client;
+                clients.emplace_back(i, stay_time);
             }
         } else {
-            FILE *input;
-            input = fopen(argv[1], "r");
-            if (input == nullptr) {
-                printf("File was not found\n");
-                fclose(input);
-                return 0;
-            } else {
-                // Считываем из файла number_of_clients
-                fscanf(input, "%d", &number_of_clients);
-                // Считываем из файла массив значений rent_days
-                int stay_time;
-                for (int i = 0; i < number_of_clients; ++i) {
-                    fscanf(input, "%d", &stay_time);
-                    Client *new_client = new Client(i, stay_time);
-                    clients[i] = *new_client;
-                }
+            std::ifstream input;
+            input.open(argv[1]);
+            // Считываем из файла number_of_clients
+            input >> number_of_clients;
+            // Считываем из файла массив значений rent_days
+            int stay_time;
+            for (int i = 0; i < number_of_clients; ++i) {
+                input >> stay_time;
+                clients.emplace_back(i, stay_time);
             }
-            fclose(input);
+            input.close();
         }
     }
 
